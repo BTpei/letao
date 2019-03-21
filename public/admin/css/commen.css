@@ -76,7 +76,10 @@ ul,ol {
     background-color: #1d1f21;
     border-left: 3px solid blue;
 }
-
+.lt_aside .nav a.current {
+    background-color: #1D1F21;
+    border-left: 3px solid #006699;
+  }
 .lt_aside .second a{
     padding-left: 60px;
 }
@@ -134,11 +137,17 @@ ul,ol {
 .lt_main .breadcrumb a:hover{
     color: #23527c;
 }
-#logoutModal .texta{
+#logoutModal .texta,#userModal .texta{
     color: #A94442;
 }
 
 .lt_content .right,.lt_content .left{
     width: 47%;
     height: 400px;
+}
+
+.table.table-bordered th,
+.table.table-bordered td {
+  text-align: center;
+  vertical-align: middle;
 }
