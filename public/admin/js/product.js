@@ -21,6 +21,8 @@ $(function () {
                 // 记录当前页
                 currentpage = info.page;
                 console.log(info);
+
+                // 渲染数据
                 paginator(info, render);
             }
         })
@@ -28,12 +30,14 @@ $(function () {
 
     // 点击添加按钮弹出模态框
     $('.btn_add').on('click', function () {
+    // 在这里添加是为了不管什么方式退出或者成功，都会清空表单
         // 重置表单样式
         $form.data('bootstrapValidator').resetForm(true);
         // 重置下拉框的文字和图片
         $('.dropdown-text').text('请选择二级分类');
         $('.img_box img').remove();
-        picArr = [];    // 清空存储数据库的图片
+        // 清空存储图片的数组
+        picArr = [];    
 
         // 模态框显示
         $('#addModal').modal('show');
@@ -48,6 +52,7 @@ $(function () {
             },
             success: function (info) {
                 console.log(info)
+                // 渲染的数据添加到指定位置
                 $('.dropdown-menu').html(template('product_tpz', info));
             }
         })
@@ -58,31 +63,33 @@ $(function () {
         // 获取id
         var id = $(this).data('id');
         // 修改button里面的内容
-        $('.dropdown-text').text($(this).children().text());
+        $('.dropdown-text').text($(this).children().text());    // li的孩子a 标签的内容
         // 动态修改 name=categoryId的value值
         $('[name=brandld]').val(id);
         // 手动修改二级校验成功
         $form.data('bootstrapValidator').updateStatus('brandld', 'VALID');
     })
 
-    // 图片上传功能
+    // 图片上传功能---引入插件
     $('#file').fileupload({
         // 图片上传成功后的回调函数
         done: function (e, data) {
-            console.log(data.result.picAddr);
+            // console.log(data.result.picAddr);
             var result = data.result.picAddr;
+            // 因为添加的是多个图片，所以每添加一个图片，创建一个img标签
             $('.img_box').prepend('<img src="' + result + '" width="100" height="100" alt="">  ');
+            // 因为最多添加3个图片，当超过3个图片的时候，把最后一个图片删除
             $('.img_box img').eq(3).remove();
             
-            // 上传的图片的结构存储到数组中
+            // 上传的图片的结构存储到(参数)数组picArr中
             picArr.unshift(data.result);        // 在数组的前面添加数据
             if(picArr.length>3){
-                picArr.pop();           // 删除数组前面的内容
+                picArr.pop();           // 删除数组后面的内容
             }
 
             if(picArr.length===3){      // 图片长度=3通过验证
                 $form.data('bootstrapValidator').updateStatus('picStatus', 'VALID');
-            }else{
+            }else{                      // 否则不通过验证
                 $form.data('bootstrapValidator').updateStatus('picStatus', 'INVALID');
             }
         }
@@ -172,9 +179,9 @@ $(function () {
     $form.on('success.form.bv', function (e) {
         e.preventDefault()
 
-        // 获取的数据除了picArr，需要自己手动拼接
+        // 获取的表单数据没有picArr，需要自己手动拼接
         var params=$form.serialize();
-        params += '&picArr=' + JSON.stringify(picArr);
+        params += '&picArr=' + JSON.stringify(picArr);      // 参见打印结果和接口文档
 
         // 发送ajax请求
         $.ajax({

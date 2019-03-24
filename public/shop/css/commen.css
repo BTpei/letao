@@ -2,10 +2,15 @@ html,
 body {
   height: 100%;
 }
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 .lt_container {
   width: 100%;
   height: 100%;
-  background-color: pink;
   padding-top: 45px;
   padding-bottom: 55px;
   max-width: 640px;
@@ -19,7 +24,39 @@ body {
   position: absolute;
   top: 0;
   z-index: 999;
-  background-color: green;
+  background-color: #006699;
+  padding: 0 45px;
+}
+.lt_header .icon_left,
+.lt_header .icon_right {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  top: 0;
+  left: 0;
+  line-height: 45px;
+  text-align: center;
+  font-size: 16px;
+}
+.lt_header .icon_left a,
+.lt_header .icon_right a {
+  color: #fff;
+}
+.lt_header .icon_right {
+  left: auto;
+  right: 0;
+}
+.lt_header .title {
+  width: 100%;
+  height: 45px;
+}
+.lt_header .title h3 {
+  line-height: 45px;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+  font-weight: normal;
+  font-size: 20px;
 }
 .lt_main {
   width: 100%;
@@ -33,4 +70,22 @@ body {
   bottom: 0;
   z-index: 999;
   background-color: blue;
+}
+.lt_food li {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding-top: 5px;
+}
+.lt_food li a {
+  color: #fff;
+}
+.lt_food li a p {
+  color: #fff;
+}
+.lt_food li.active a {
+  color: orange;
+}
+.lt_food li.active a p {
+  color: orange;
 }

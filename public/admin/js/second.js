@@ -73,7 +73,6 @@ $(function () {
             $('[name=brandLogo]').val(result);
             // 手动修改图片检验
             $form.data('bootstrapValidator').updateStatus('brandLogo', 'VALID');
-
         }
     })
 
@@ -105,7 +104,7 @@ $(function () {
                         message: '请上传二级分类的图片'
                     }
                 }
-            },
+            }
         },
         feedbackIcons: {
             valid: 'glyphicon glyphicon-thumbs-up',

@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <!-- 退出模态框 -->
+        <!-- 退出模态框 需要自己添加一个id 并且不能修改它的类名，只能添加-->
         <div id="logoutModal" class="modal fade bs-example-modal-sm" tabindex="-1">
             <div class="modal-dialog modal-sm" role="document">
                 <div class="modal-content">
@@ -121,18 +121,19 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title">添加商品</h4>
                     </div>
-                    <form id="form">
+                    <form id="form">  <!-- 添加一个id方便后面获取form表单 -->
                         <div class="modal-body">
                             <!-- 选择一级分类 -->
                             <div class="form-group">
                                 <div class="dropdown">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false">
-                                        <span class="dropdown-text">请选择二级分类</span>
+                                        <span class="dropdown-text">请选择二级分类</span>  <!-- 添加一个span标签，方便后面修改里面的内容-->
                                         <span class="caret"></span>
                                     </button>
                                     <!-- 隐藏域：传递二级数据 -->
                                     <input type="hidden" name="brandld">
+
                                     <ul class="dropdown-menu">
                                         <!-- 动态渲染 -->
                                     </ul>
@@ -143,9 +144,8 @@
                                 <input type="text" name="proName" class="form-control" placeholder="请输入商品名称">
                             </div>
                             <!-- 输入商品描述 -->
-                            <div class="form-group">
+                            <div class="form-group">  <!-- 文本输入框 -->
                                 <textarea type="text" name="proDesc" class="form-control" rows="4" placeholder="请输入商品的描述"></textarea>
-                                <!-- <input type="text" name="proDesc" class="form-control" placeholder="请输入商品库存"> -->
                             </div>
                             <!-- 输入商品库存 -->
                             <div class="form-group">
@@ -163,8 +163,9 @@
                             <div class="form-group">
                                 <input type="text" name="price" class="form-control" placeholder="请输入商品现价">
                             </div>
-                            <!-- 插入图片 -->
+                            <!-- 插入图片按钮 -->
                             <div class="form-group">
+                                <!-- 这里的for需要和下面input的id名相同 -->
                                 <label for="file" class="btn btn-default">上传图片</label>
                                 <!-- 样式要和按钮一样，但是能够上传图片 -->
                                 <!-- input:file指定name属性：指定图片上传时候的name，
@@ -208,7 +209,8 @@
         <!-- 渲染下拉框内容模板 -->
         <script type="text/html" id="product_tpz">
         {{each rows v i}}
-          <li data-id="{{v.id}}"><a href="javascript:;">{{v.brandName}}</a></li>
+            <!-- 需要获取id记录选择的内容 -->
+            <li data-id="{{v.id}}"><a href="javascript:;">{{v.brandName}}</a></li>
         {{/each}}
     </script>
 
