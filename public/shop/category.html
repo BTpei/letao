@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="./css/commen.css">
+    <link rel="stylesheet" href="./css/category.css">
 </head>
 
 <body>
@@ -31,7 +32,26 @@
                 </a>
             </div>
         </div>
-        <div class="lt_main"></div>
+        <div class="lt_main">
+            <div class="main_left">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul>
+                            <!-- 动态渲染 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="main_right">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-clearfix">
+                            <!-- 动态渲染 -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="lt_food">
             <ul>
                 <li>
@@ -40,7 +60,7 @@
                         <p>首页</p>
                     </a>
                 </li>
-                <li  class="active">
+                <li class="active">
                     <a href="category.html">
                         <span class="fa fa-bars"></span>
                         <p>分类页</p>
@@ -61,6 +81,34 @@
             </ul>
         </div>
     </div>
+
+    <!-- 左侧列表模板 -->
+    <script type="text/html" id="left_tql">
+        {{each rows v i}}
+            <li data-id={{v.id}} class="{{ i === 0 ? 'active' : '' }}"><a href="#">{{v.categoryName}}</a></li>
+
+        {{/each}}
+    </script>
+
+    <script type="text/html" id="right_tql">
+        {{if rows.length===0}}
+            <div class="tips">没有更多分类信息了</div>
+        {{/if}}
+        {{each rows v i}}
+            <li>
+                <a href="#">
+                    <img src="{{v.brandLogo}}" alt="">
+                    <p>{{v.brandName}}</p>
+                </a>
+            </li>
+        {{/each}}
+    </script>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/commen.js"></script>
+    <script src="./js/category.js"></script>
 </body>
 
 </html>
