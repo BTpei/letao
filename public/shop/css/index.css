@@ -1,0 +1,32 @@
+.nav {
+  padding: 10px;
+}
+.nav li {
+  float: left;
+  width: 33.33%;
+}
+.product {
+  padding: 10px;
+  overflow: hidden;
+  margin: 0;
+}
+.product-item {
+  width: 48%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product-item:nth-child(odd) {
+  margin-right: 4%;
+}
+.product-item .good_name {
+  height: 40px;
+}
+.product-item span:first-child {
+  color: red;
+}
+.product-item span:last-child {
+  text-decoration: line-through;
+}

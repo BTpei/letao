@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <!--  user-scalable=0：禁止用户缩放 -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>乐淘商城</title>
@@ -11,11 +11,13 @@
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="./css/commen.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
     <!-- 全屏容器 + 区域滚动 -->
     <div class="lt_container">
+        <!-- 头部 -->
         <div class="lt_header">
             <div class="icon_left">
                 <a href="index.html">
@@ -31,7 +33,153 @@
                 </a>
             </div>
         </div>
-        <div class="lt_main"></div>
+
+        <!-- 主体 -->
+        <div class="lt_main">
+            <!-- 区域滚动：需要加position：relative -->
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!-- 轮播图 -->
+                    <div class="mui-slider">
+                        <!--  mui-slider-loop：无缝滚动 -->
+                        <div class="mui-slider-group  mui-slider-loop">
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner6.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner1.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner2.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner3.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner4.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner5.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner6.png" /></a></div>
+                            <div class="mui-slider-item"><a href="#"><img src="./img/banner1.png" /></a></div>
+                        </div>
+
+                        <!-- 小圆点 -->
+                        <div class="mui-slider-indicator">
+                            <div class="mui-indicator mui-active"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                            <div class="mui-indicator"></div>
+                        </div>
+                    </div>
+
+                    <!-- 导航 -->
+                    <div class="nav">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav1.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav2.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav3.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav4.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav5.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/nav6.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 商品区域 -->
+                    <div class="product">
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                        <a href="#" class="product-item">
+                            <img src="./img/product.jpg" class="good_img">
+                            <p class="good_name mui-ellipsis-2">你是电脑发少年的功能的三年高考的那个可能的开始那广阔的是否能够看你的是否跟得上发鬼地方</p>
+                            <P class="good_price">
+                                <span>￥560</span>
+                                <span>￥460</span>
+                            </P>
+                            <button class="mui-btn mui-btn-primary">立即购买</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部 -->
         <div class="lt_food">
             <ul>
                 <li class="active">
@@ -61,6 +209,9 @@
             </ul>
         </div>
     </div>
+
+    <script src="./lib/mui/js/mui.js"></script>
+    <script src="./js/commen.js"></script>
 </body>
 
 </html>
