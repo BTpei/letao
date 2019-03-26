@@ -83,7 +83,8 @@
             <ul>
                 {{each rows v i}}
                 <li>
-                    <a class="mui-pull-left">{{v}}</a>
+                    <!-- 这里历史记录每一个点击都需要实现跳转功能，所以href属性不能写死 -->
+                    <a class="mui-pull-left" href="searchList.html?key={{v}}">{{v}}</a>
                     <span data-index={{i}} class="fa fa-close mui-pull-right btn-sc"></span>
                 </li>
                 {{/each}}
