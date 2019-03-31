@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="./lib/mui/css/mui.css">
     <link rel="stylesheet" href="./lib/fa/css/font-awesome.css">
     <link rel="stylesheet" href="./css/commen.css">
-    <link rel="stylesheet" href="./css/search.css">
+    <link rel="stylesheet" href="./css/searchList.css">
 </head>
 
 <body>
     <!-- 全屏容器 + 区域滚动 -->
     <div class="lt_container">
+        <!-- 头部 -->
         <div class="lt_header">
             <div class="icon_left">
                 <a href="index.html">
@@ -24,22 +25,35 @@
                 </a>
             </div>
             <div class="title">
-                <h3>搜索中心</h3>
+                <h3>商品列表</h3>
             </div>
         </div>
+        <!-- 主体 -->
         <div class="lt_main">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
+                    <!-- 搜索 -->
                     <div class="lt_search">
                         <input type="text" placeholder="请输入搜索的内容" class="insearch">
                         <button class="mui-btn mui-btn-primary btn-search">搜索</button>
                     </div>
-                    <div class="lt_history">
-                        <!-- 模板 -->
+                    <!-- 排序 -->
+                    <div class="lt_sort">
+                        <ul>
+                            <li><a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a></li>
+                            <li data-type="price"><a href="javascript:;">价格 <span class="fa fa-angle-down"></span></a></li>
+                            <li date-type="num"><a href="javascript:;">库存 <span class="fa fa-angle-down"></span></a></li>
+                            <li><a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a></li>
+                        </ul>
+                    </div>
+                    <!-- 商品区域 -->
+                    <div class="product">
+                        
                     </div>
                 </div>
             </div>
         </div>
+        <!-- 底部 -->
         <div class="lt_food">
             <ul>
                 <li>
@@ -70,35 +84,29 @@
         </div>
     </div>
 
-    <!-- 历史数据模板 -->
     <script type="text/html" id="tql">
-        {{if rows.length === 0}}
-        <div class="tips">没有更多的历史记录</div>
-        {{else}}
-        <div class="title mui-clearfix">
-            <span class="mui-pull-left">搜索历史</span>
-            <span class="mui-pull-right btn-del"><i class="fa fa-trash"></i>清空历史</span>
-        </div>
-        <div class="content">
-            <ul>
-                {{each rows v i}}
-                <li>
-                    <!-- 这里历史记录每一个点击都需要实现跳转功能，所以href属性不能写死 -->
-                    <a class="mui-pull-left" href="searchList.html?key={{v}}">{{v}}</a>
-                                             <!-- href="searchList.html?key={{v}}" -->
-                    <span data-index={{i}} class="fa fa-close mui-pull-right btn-sc"></span>
-                </li>
-                {{/each}}
-            </ul>
-        </div>
+        {{if data.length===0}}
+            <div>暂时没有更多的商品，搜些别的吧</div>
         {{/if}}
+        {{each data v i}}
+            <a href="#" class="product-item">
+                <img src="{{v.pic[0].picAddr}}" class="good_img">
+                <p class="good_name mui-ellipsis-2">{{v.num}}  --- {{ v.proName }}</p>
+                <P class="good_price">
+                    <span>￥{{v.price}}</span>
+                    <span>￥{{v.oldPrice}}</span>
+                </P>
+                <button class="mui-btn mui-btn-primary">立即购买</button>
+            </a>
+        {{/each}}
     </script>
+
 
     <script src="./lib/mui/js/mui.js"></script>
     <script src="./lib/zepto/zepto.min.js"></script>
     <script src="./lib/artTemplate/template-web.js"></script>
     <script src="./js/commen.js"></script>
-    <script src="./js/search.js"></script>
+    <script src="./js/searchList.js"></script>
 </body>
 
 </html>

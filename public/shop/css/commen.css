@@ -94,3 +94,48 @@ img {
 .lt_food li.active a p {
   color: orange;
 }
+.lt_search {
+  position: relative;
+  padding: 10px;
+}
+.lt_search input {
+  width: 100%;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  line-height: 34px;
+  padding-left: 20px;
+  font-size: 12px;
+  border: 1px solid #227AFF;
+}
+.lt_search button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 0 3px 3px 0;
+}
+.product {
+  padding: 10px;
+  overflow: hidden;
+  margin: 0;
+}
+.product-item {
+  width: 48%;
+  float: left;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product-item:nth-child(odd) {
+  margin-right: 4%;
+}
+.product-item .good_name {
+  height: 40px;
+}
+.product-item span:first-child {
+  color: red;
+}
+.product-item span:last-child {
+  text-decoration: line-through;
+}
