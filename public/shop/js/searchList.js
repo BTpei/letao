@@ -41,6 +41,9 @@ $(function () {
 
     // 发送ajax请求获取数据
     function render() {
+        // 加载动画
+        $('.product').html('<div class="loding"></div>');
+
         // 参数
         var obj = {
             page: 1,
@@ -54,7 +57,7 @@ $(function () {
         if($active.length>0){
             var type=$active.data('type');
             var value=$active.find('span').hasClass('fa-angle-down')?2:1;
-            obj[type]=type;
+            obj[type]=value;
             console.log(obj)
         }
 

@@ -1,0 +1,24 @@
+.cart-item {
+  padding: 10px 15px;
+}
+.cart-item .img_box {
+  float: left;
+  width: 60px;
+}
+.cart-item .img_box img {
+  width: 60px;
+  height: 60px;
+}
+.cart-item .info {
+  overflow: hidden;
+  padding: 0 10px;
+}
+.cart-item .info .proName {
+  color: #333;
+}
+.cart-item .info .price span:nth-child(1) {
+  color: red;
+}
+.cart-item .info .price span:nth-child(2) {
+  text-decoration: line-through;
+}

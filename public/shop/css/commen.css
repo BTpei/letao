@@ -139,3 +139,9 @@ img {
 .product-item span:last-child {
   text-decoration: line-through;
 }
+/* 退出 */
+.black {
+  margin: 30px;
+  display: block;
+  width: 90%;
+}

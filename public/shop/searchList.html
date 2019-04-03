@@ -42,7 +42,7 @@
                         <ul>
                             <li><a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a></li>
                             <li data-type="price"><a href="javascript:;">价格 <span class="fa fa-angle-down"></span></a></li>
-                            <li date-type="num"><a href="javascript:;">库存 <span class="fa fa-angle-down"></span></a></li>
+                            <li data-type="num"><a href="javascript:;">库存 <span class="fa fa-angle-down"></span></a></li>
                             <li><a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a></li>
                         </ul>
                     </div>
@@ -89,7 +89,7 @@
             <div>暂时没有更多的商品，搜些别的吧</div>
         {{/if}}
         {{each data v i}}
-            <a href="#" class="product-item">
+            <a href="product.html?productId={{v.id}}" class="product-item">
                 <img src="{{v.pic[0].picAddr}}" class="good_img">
                 <p class="good_name mui-ellipsis-2">{{v.num}}  --- {{ v.proName }}</p>
                 <P class="good_price">

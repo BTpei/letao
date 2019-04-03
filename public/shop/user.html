@@ -23,10 +23,26 @@
                 </a>
             </div>
             <div class="title">
-                <h3>登录</h3>
+                <h3>个人中心</h3>
             </div>
         </div>
-        <div class="lt_main"></div>
+        <div class="lt_main">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell userinfo">
+
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">账户与安全</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">我的购物车</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">收货地址管理</a>
+                </li>
+            </ul>
+            <button class="black">退出</button>
+        </div>
         <div class="lt_food">
             <ul>
                 <li>
@@ -57,5 +73,20 @@
         </div>
     </div>
 </body>
+
+<script type="text/html" id="tql">
+    <a href="javascript:;">
+        <img class="mui-media-object mui-pull-left" src="./img/user.jpg">
+        <div class="mui-media-body">
+            {{username}}
+            <p class='mui-ellipsis'>绑定手机：{{mobile}}</p>
+        </div>
+    </a>
+</script>
+<script src="lib/mui/js/mui.js"></script>
+<script src="lib/zepto/zepto.min.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="./js/commen.js"></script>
+<script src="js/user.js"></script>
 
 </html>
